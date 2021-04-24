@@ -1,0 +1,62 @@
+<!--template html criado para cadastrar as músicas do artista-->
+
+{% extends "base.html" %}
+ 
+{% block title %}Adicionar novos registros{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <h4>CRUD - Registro das músicas</h4> 
+         
+ <form method="POST" class="post-form" action="/addnew">  
+   {% csrf_token %}
+   
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Insira os dados</h3>  
+  </div>  
+   </div>  
+   
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Titulo:</label>  
+  <div class="col-sm-4">  
+    {{ form.titulo }}  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Duração (segundos):</label>  
+  <div class="col-sm-4">  
+    {{ form.duracao }}  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Spotify:</label>  
+  <div class="col-sm-4">  
+    {{ form.spotify }}  
+  </div>  
+   </div>  
+   <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Youtube:</label>  
+    <div class="col-sm-4">  
+          {{ form.youtube }}  
+    </div>  
+     </div>
+   <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">ID do Artista:</label>  
+    <div class="col-sm-4">  
+          {{ form.artista }}  
+    </div>  
+     </div>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-primary">Inserir</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+</div> 
+{% endblock content %} 

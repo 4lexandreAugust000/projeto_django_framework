@@ -1,0 +1,64 @@
+<!--template criado para que o artista consiga editar as suas músicas-->
+
+{% extends "base.html" %}
+ 
+{% block title %}Atualizar música{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <h4>CRUD - Registro das músicas</h4>  
+ <form method="POST" class="post-form" action="/update/{{musica.id}}">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Atualizar</h3>  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">ID:</label>  
+  <div class="col-sm-4">  
+   <input type="number" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ musica.id }}"/>  
+  </div>  
+   </div>  
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Titulo:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="titulo" id="id_titulo" required maxlength="100" value="{{ musica.titulo }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Duração (segundos):</label>  
+  <div class="col-sm-4">  
+   <input type="number" class="form-control" name="duracao" id="id_duracao" required maxlength="254" value="{{ musica.duracao }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Spotify:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="spotify" id="id_spotify" required maxlength="15" value="{{ musica.spotify }}" />  
+  </div>  
+   </div>
+   <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Youtube:</label>  
+    <div class="col-sm-4">  
+     <input type="text" class="form-control" name="youtube" id="id_youtube" required maxlength="15" value="{{ musica.youtube }}" />  
+    </div>  
+     </div> 
+   <div class="form-group row">  
+    <label class="col-sm-2 col-form-label"> ID do Artista:</label>  
+    <div class="col-sm-4">  
+     <input type="text" class="form-control" name="artista" id="id_artista" required maxlength="15" value="{{ musica.artista }}" />  
+    </div>  
+     </div>
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-success btn-lg">Atualizar registro</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+{% endblock content %}   
